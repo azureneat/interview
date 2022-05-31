@@ -1,0 +1,69 @@
+<div id="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+       <div class="form-fields">
+          <mat-form-field   appearance="fill" > 
+            <mat-label>Full Name: </mat-label>       
+            <input    
+              matInput 
+              type="text"
+              requied
+              placeholder="Enter  Full  Names "
+              formControlName="name">  
+            <mat-error  *ngIf="indicator('name', 'name')">Enter Your Full Name</mat-error>
+           </mat-form-field> 
+          <mat-form-field   appearance="fill" > 
+            <mat-label>Username: </mat-label>       
+            <input  
+              matInput 
+              type="text"   
+              requied 
+              placeholder="Enter  Your  Username"
+              formControlName="username"  >  
+            <mat-error  *ngIf="indicator('username', 'username')">Enter Your Username </mat-error>
+           </mat-form-field> 
+          <mat-form-field   appearance="fill" > 
+            <mat-label>Email: </mat-label>       
+            <input   
+              matInput 
+              type="email" 
+              requied 
+              formControlName="email"
+              placeholder="Enter valid Email ">  
+            <mat-error  *ngIf="indicator('email', 'email')">Enter A valid  Email Address</mat-error>
+           </mat-form-field> 
+       </div> 
+       <div class="form-fields">
+          <mat-form-field   appearance="fill" > 
+            <mat-label>City: </mat-label>       
+            <input    
+              matInput 
+              type="text"
+              requied
+              placeholder="Enter  Full  Names "
+              formControlName="city">  
+            <mat-error  *ngIf="indicator('city', 'city')">Enter Your City  </mat-error>
+           </mat-form-field> 
+          <mat-form-field   appearance="fill" > 
+            <mat-label>Enter A Valid Phone  Number: </mat-label>       
+            <input  
+              matInput 
+              type="text"   
+              requied 
+              placeholder="Enter  Your Valid Phone Number"
+              formControlName="phone"  >  
+            <mat-error  *ngIf="indicator('city', 'city')">Enter A Valid Phone  Number </mat-error>
+           </mat-form-field> 
+          <mat-form-field   appearance="fill" > 
+            <mat-label>Enter  Your Website: </mat-label>       
+            <input   
+              matInput 
+              type="text" 
+              requied 
+              formControlName="website"
+              placeholder="Enter Your Website ">  
+            <mat-error  *ngIf="indicator('city', 'website')">Enter Your Website</mat-error>
+           </mat-form-field> 
+       </div> 
+      <button mat-raised-button color="primary" [disabled]="!userForm.valid">Register</button>
+    </form>
+  </div>

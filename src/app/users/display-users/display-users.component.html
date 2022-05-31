@@ -1,0 +1,41 @@
+<div id="container">
+  <div>   
+    <h2>Doctors List</h2>
+    <div id="search-bar" >
+      <mat-form-field appearance="fill">
+      <mat-icon>search</mat-icon>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="term"
+          placeholder="Enter Doctor name or Username">  
+      </mat-form-field> 
+    </div>
+    <table >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>City</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let user of users | filter:term ">
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.address.city}}</td>
+          <td>{{user.website}}</td>
+
+        </tr>
+        
+      </tbody>
+
+  </table>    
+</div>
+
+</div>
