@@ -32,11 +32,10 @@ export class UserRegComponent implements OnInit {
 
   }
   onSubmit() {
-    console.log(this.userForm.value)
+    this.appService.allUsers.next(this.userForm.value)
     this.appService.userSignup(this.userForm.value).subscribe(
       (res: UserDetail) => {
 
-        console.log(res)
       }
 
     )

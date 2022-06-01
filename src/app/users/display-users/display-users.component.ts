@@ -3,6 +3,7 @@ import { AppService } from '../../shared/app.service';
 import { UserDetail } from 'src/app/shared/user-detail';
 import { FormControl } from '@angular/forms'
 
+
 @Component({
   selector: 'app-display-users',
   templateUrl: './display-users.component.html',
@@ -14,18 +15,22 @@ export class DisplayUsersComponent implements OnInit {
   constructor(private appService: AppService) { }
   users: UserDetail[]
   ngOnInit(): void {
-    this.displayUser()
-  }
-
-
-  displayUser() {
-    this.appService.fetchUser().subscribe((res: UserDetail[]) => {
+    this.appService.fetchUser()
+    this.appService.allUsers.subscribe((res: UserDetail[]) => {
       this.users = res
-
       console.log(this.users)
-
-
     })
-
   }
+
+
+  // displayUser() {
+  //   this.appService.fetchUser().subscribe((res: UserDetail[]) => {
+  //     this.users = res
+
+  //     console.log(this.users)
+
+
+  //   })
+
+  //}
 }
